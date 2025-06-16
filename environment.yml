@@ -1,0 +1,36 @@
+﻿name: nodum-trading
+channels:
+  - pytorch          # primero, para que resuelva pytorch ↓
+  - conda-forge
+dependencies:
+  # núcleo científico
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - jupyterlab
+  - ipykernel
+
+  # finanzas cuantitativas
+  - quantlib-python
+  - yfinance
+  - vectorbt
+
+  # RL & gym
+  - gymnasium[all]
+  - stable-baselines3
+  - pytorch          # ← paquete correcto
+  - cpuonly          # quítalo si tienes GPU + CUDA 12 (usa 'cudatoolkit=12.1')
+
+  # modelos generativos (estos vendrán vía pip)
+  - pip
+  - pip:
+      - transformers
+      - diffusers
+      - accelerate
+      - sentencepiece
+      - riskfolio-lib
+      - QuantLib==1.29   # ← nuevo
+
